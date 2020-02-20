@@ -1,0 +1,70 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\laragon\\bin\\nodejs\\node.exe',
+1 verbose cli   'C:\\laragon\\bin\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '--global',
+1 verbose cli   'npm@latest' ]
+2 info using npm@3.10.10
+3 info using node@v6.9.5
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData npm@latest
+8 silly fetchNamedPackageData npm
+9 silly mapToRegistry name npm
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'npm',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'npm',
+12 silly mapToRegistry   name: 'npm',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/npm
+14 verbose request uri https://registry.npmjs.org/npm
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 16:16:57
+17 verbose request id 618bddc43f648c9d
+18 http request GET https://registry.npmjs.org/npm
+19 info retry will retry, error on last attempt: Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+20 info attempt registry request try #2 at 16:17:08
+21 http request GET https://registry.npmjs.org/npm
+22 info retry will retry, error on last attempt: Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+23 info attempt registry request try #3 at 16:18:08
+24 http request GET https://registry.npmjs.org/npm
+25 silly fetchPackageMetaData Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+25 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1022:11)
+25 silly fetchPackageMetaData     at errnoException (dns.js:33:15)
+25 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+25 silly fetchPackageMetaData  error for npm@latest { Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+25 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1022:11)
+25 silly fetchPackageMetaData     at errnoException (dns.js:33:15)
+25 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+25 silly fetchPackageMetaData   code: 'EAI_AGAIN',
+25 silly fetchPackageMetaData   errno: 'EAI_AGAIN',
+25 silly fetchPackageMetaData   syscall: 'getaddrinfo',
+25 silly fetchPackageMetaData   hostname: 'registry.npmjs.org',
+25 silly fetchPackageMetaData   host: 'registry.npmjs.org',
+25 silly fetchPackageMetaData   port: 443 }
+26 silly rollbackFailedOptional Starting
+27 silly rollbackFailedOptional Finishing
+28 silly runTopLevelLifecycles Finishing
+29 silly install printInstalled
+30 verbose stack Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+30 verbose stack     at Object.exports._errnoException (util.js:1022:11)
+30 verbose stack     at errnoException (dns.js:33:15)
+30 verbose stack     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+31 verbose cwd C:\laragon\www\base\webroot\assets\tools
+32 error Windows_NT 6.1.7601
+33 error argv "C:\\laragon\\bin\\nodejs\\node.exe" "C:\\laragon\\bin\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "--global" "npm@latest"
+34 error node v6.9.5
+35 error npm  v3.10.10
+36 error code EAI_AGAIN
+37 error errno EAI_AGAIN
+38 error syscall getaddrinfo
+39 error getaddrinfo EAI_AGAIN registry.npmjs.org:443
+40 error If you need help, you may report this error at:
+40 error     <https://github.com/npm/npm/issues>
+41 verbose exit [ 1, true ]
