@@ -82,8 +82,8 @@
                                         <td><?= $val->file_name ?></td>
                                         <td><?= $val->note ?></td>
                                         <td class='text-center'>
-                                        <?php $image = '/'. $val->file_dir . $val->file;?>
-                                        <img src="<?= $image ?>"  height="50px">
+                                        <!-- <?php $image = '/'. $val->file_dir . $val->file;?>
+                                        <img src="<?= $image ?>"  height="50px"> -->
                                         <?= $this->Html->Link('View', '/'. $val->file_dir . $val->file, ['class' => 'btn btn-outline-warning', 'target' => '_blank']);?>
                                         </td>
                                     </tr>
