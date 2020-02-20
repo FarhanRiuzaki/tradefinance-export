@@ -18,7 +18,7 @@
                     <tr>
                         <td><b>USERNAME</b></td>
                         <td>:</td>
-                        <td><?= strtoupper($userData->name) ?></td>
+                        <td><?= strtoupper($userData->username) ?></td>
                     </tr>
                     <tr>
                         <td><b>EMAIL</b></td>

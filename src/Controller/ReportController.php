@@ -85,7 +85,7 @@ class ReportController extends AppController
         $breadCrumbs = [
             Router::url(['action' => 'index']) => $titlesubModule
         ];
-        $this->set(compact('arrayBranch','titleModule','breadCrumbs','titlesubModule','maker','branch_search', 'start', 'end'));
+        $this->set(compact('arrayBranch','breadCrumbs','titlesubModule','maker','branch_search', 'start', 'end'));
         
     }
 

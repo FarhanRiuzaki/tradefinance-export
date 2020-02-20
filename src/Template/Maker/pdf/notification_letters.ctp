@@ -6,8 +6,8 @@
 </style>
 <div class='row'>
     <div class='col-md-3'>
-        <?php $image = $this->Utilities->generateUrlAsset(null,$defaultAppSettings['App.Logo']); ?>
-        <img style="max-height:120px;max-width:100%;" class="" alt="Logo" src="<?=$image?>" />
+        <!-- <?php $image = $this->Utilities->generateUrlAsset(null,$defaultAppSettings['App.Logo']); ?> -->
+        <!-- <img style="max-height:120px;max-width:100%;" class="" alt="Logo" src="<?=$image?>" /> -->
     </div>
 </div>
 <div class='container' style='font-size: 14px'>

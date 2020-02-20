@@ -82,7 +82,7 @@ class AmendmentApproverController extends AppController
             $this->set('aaData',$dataTable['aaData']);
             $this->set('iTotalDisplayRecords',$dataTable['iTotalDisplayRecords']);
             $this->set('iTotalRecords',$dataTable['iTotalRecords']);
-            $this->set('sColumns',$dataTable['sColumns']);
+            $this->set('sColumns',$dataTable['sColumns']);  
             $this->set('sEcho',$dataTable['sEcho']);
             $this->set('_serialize',['aaData','iTotalDisplayRecords','iTotalRecords','sColumns','sEcho']);
         }else{
@@ -90,7 +90,7 @@ class AmendmentApproverController extends AppController
             $breadCrumbs = [
                 Router::url(['action' => 'index']) => $titlesubModule
             ];
-            $this->set(compact('titleModule','breadCrumbs','titlesubModule'));
+            $this->set(compact('breadCrumbs','titlesubModule'));
         }
         
         
@@ -113,7 +113,7 @@ class AmendmentApproverController extends AppController
             Router::url(['action' => 'index']) => "List ".$this->titleModule,
             Router::url(['action' => 'view',$id]) => $titlesubModule
         ];
-        $this->set(compact('titleModule','breadCrumbs','titlesubModule'));
+        $this->set(compact('breadCrumbs','titlesubModule'));
         $this->set('maker', $maker);
     }
 
@@ -143,7 +143,7 @@ class AmendmentApproverController extends AppController
             Router::url(['action' => 'index']) => "List ".$this->titleModule,
             Router::url(['action' => 'add']) => $titlesubModule
         ];
-        $this->set(compact('titleModule','breadCrumbs','titlesubModule'));
+        $this->set(compact('breadCrumbs','titlesubModule'));
     }
 
     /**
@@ -205,7 +205,7 @@ class AmendmentApproverController extends AppController
             Router::url(['action' => 'index']) => "List ".$this->titleModule,
             Router::url(['action' => 'add']) => $titlesubModule
         ];
-        $this->set(compact('titleModule','breadCrumbs','titlesubModule'));
+        $this->set(compact('breadCrumbs','titlesubModule'));
     }
 
 
@@ -254,8 +254,7 @@ class AmendmentApproverController extends AppController
         Configure::write('CakePdf', [
             'engine' => [
                 'className' => 'CakePdf.WkHtmlToPdf',
-                // 'binary' => '/usr/local/bin/wkhtmltopdf',
-                'className' => 'CakePdf.WkHtmlToPdf', 'binary' => 'C:\wkhtmltopdf\bin\wkhtmltopdf.exe',
+                'binary' => env('WKHTML', 'C:\wkhtmltopdf\bin\wkhtmltopdf.exe' ),
                 'options' => [
                     'print-media-type' => false,
                     'outline' => true,

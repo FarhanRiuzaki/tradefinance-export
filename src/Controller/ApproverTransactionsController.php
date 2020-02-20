@@ -95,7 +95,7 @@ class ApproverTransactionsController extends AppController
             $breadCrumbs = [
                 Router::url(['action' => 'index']) => $titlesubModule
             ];
-            $this->set(compact('titleModule','breadCrumbs','titlesubModule'));
+            $this->set(compact('breadCrumbs','titlesubModule'));
         }
         
         
@@ -149,7 +149,7 @@ class ApproverTransactionsController extends AppController
             $breadCrumbs = [
                 Router::url(['action' => 'index']) => $titlesubModule
             ];
-            $this->set(compact('titleModule','breadCrumbs','titlesubModule'));
+            $this->set(compact('breadCrumbs','titlesubModule'));
         }
     }
 
@@ -301,7 +301,7 @@ class ApproverTransactionsController extends AppController
             $breadCrumbs = [
                 Router::url(['action' => 'index']) => $titlesubModule
             ];
-            $this->set(compact('titleModule','breadCrumbs','titlesubModule'));
+            $this->set(compact('breadCrumbs','titlesubModule'));
         }
     }
 
