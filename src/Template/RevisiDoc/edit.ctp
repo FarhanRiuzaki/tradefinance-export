@@ -86,7 +86,7 @@
                                         <input type="file" name='upload_doc_file[<?= $val->id ?>][file]' class='form-control file'>
                                         <input type="hidden" name='upload_doc_file[<?= $val->id ?>][id]' value='<?= $val->id ?>'>
                                         </td>
-                                        <td><?= $this->Html->Link('View', '/'. $val->file_dir . $val->file, ['class' => 'btn btn-outline-warning', 'target' => '_blank']);?></td>
+                                        <td class='text-center'><?= $this->Html->Link('View', '/'. $val->file_dir . $val->file, ['class' => 'btn btn-outline-warning', 'target' => '_blank']);?></td>
                                     </tr>
                                 <?php endforeach;?>
                                 </tbody>

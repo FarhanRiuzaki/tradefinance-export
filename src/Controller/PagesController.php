@@ -173,7 +173,7 @@ class PagesController extends AppController
                 'id' => $user->user_group_id
             ]
         ]]]);
-        $this->set(compact('record', 'userGroups'));
+        $this->set(compact('userGroups'));
         $this->set(compact('user'));
         $titleModule = "Profile";
         $titlesubModule = "Edit ".$titleModule;

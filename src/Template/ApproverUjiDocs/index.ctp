@@ -1,23 +1,18 @@
 
 <?=$this->element('widget/datatable');?>
 <?php $this->start('script');?>
+<?php
+    $editUrl      = $this->Url->build(['action'=>'edit'])."/";
+    if($this->Acl->check(['action'=>'edit']) == false){
+        $editUrl = "";
+    }
+    $viewUrl = $this->Url->build(['action'=>'view'])."/";
+    if($this->Acl->check(['action'=>'view']) == false){
+        $viewUrl = "";
+    }
+?>
     <script>
-        <?php
-            $deleteUrl    = $this->Url->build(['action'=>'delete'])."/";
-            if($this->Acl->check(['action'=>'delete']) == false){
-                $deleteUrl = "";
-            }
-            $editUrl      = $this->Url->build(['action'=>'edit'])."/";
-            if($this->Acl->check(['action'=>'edit']) == false){
-                $editUrl = "";
-            }
-            $viewUrl = $this->Url->build(['action'=>'view'])."/";
-            if($this->Acl->check(['action'=>'view']) == false){
-                $viewUrl = "";
-            }
-        ?>
         jQuery(document).ready(function() {
-            var deleteUrl = "<?=$deleteUrl;?>";
             var editUrl = "<?=$editUrl;?>";
             var viewUrl = "<?=$viewUrl;?>";
             var no = 0;

@@ -15,17 +15,9 @@
 <?php $this->start('script');?>
     <script>
         <?php
-            $deleteUrl    = $this->Url->build(['action'=>'delete'])."/";
-            if($this->Acl->check(['action'=>'delete']) == false){
-                $deleteUrl = "";
-            }
             $editUrl      = $this->Url->build(['action'=>'edit'])."/";
             if($this->Acl->check(['action'=>'edit']) == false){
                 $editUrl = "";
-            }
-            $addUrl      = $this->Url->build(['action'=>'add'])."/";
-            if($this->Acl->check(['action'=>'add']) == false){
-                $addUrl = "";
             }
             $viewUrl = $this->Url->build(['action'=>'viewsor'])."/";
             if($this->Acl->check(['action'=>'viewsor']) == false){
@@ -33,9 +25,7 @@
             }
         ?>
         jQuery(document).ready(function() {
-            var deleteUrl = "<?=$deleteUrl;?>";
             var editUrl = "<?=$editUrl;?>";
-            var addUrl  = "<?=$addUrl;?>";
             var viewUrl = "<?=$viewUrl;?>";
             no = 0;
             var options = {
@@ -47,26 +37,29 @@
                         "orderable" : !1,
                         "searchable" : !1,
                         "className": "text-center",
-                        width: '5%',
+                        width: '8%',
                         data : "id",
                         render:function(id, e, t, n) {
-                            var listLink = "";
+                            var left = "";
+                            var right = "";
                             
                             if(t.status_sor  != '2' && t.status_sor  != '3'){
                                 if(editUrl != ""){
-                                    listLink += '<a class="dropdown-item" href="'+editUrl+t.uji_docs[0].id+'"><i class="la la-edit"></i> Edit</a>\n ';
+                                    left = '<a class="btn btn-success btn-icon" href="'+editUrl+t.uji_docs[0].id+'"><i class="la la-edit"></i></a>\n ';
                                 }
                             }
                             if(viewUrl != ""){
-                                listLink += '<a class="dropdown-item" href="'+viewUrl+t.uji_docs[0].id+'"><i class="la la-search-plus"></i> View</a>\n ';
+                                right = '<a class="btn btn-warning btn-icon" href="'+viewUrl+t.uji_docs[0].id+'"><i class="la la-search-plus"></i></a>\n ';
                             }
-                            if(listLink != ""){
-                                return'\n<span class="dropdown">\n'
-                                + '\n<a href="#" class="btn btn-sm btn-primary btn-icon btn-icon-md\n'
-                                + '" data-toggle="dropdown"'
-                                + 'aria-expanded="true">\n<i class="la la-reorder"></i>\n'               
-                                +'</a>\n'
-                                +'<div class="dropdown-menu">\n '+listLink+'                    </div>\n</span>\n';
+                            if(left != "" && right != ""){
+                                return '<div class="row">'
+                                        + '<div class="col-6">'
+                                        + left
+                                        + '</div>'
+                                        + '<div class="col-6">'  
+                                        + right
+                                        + '</div>'
+                                        '</div>';
                             }
                             return "-";
                         },

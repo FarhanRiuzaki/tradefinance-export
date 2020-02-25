@@ -11,12 +11,16 @@
 
 ?>
     <script>
+    $(function(){
         // CEK JIKA ADA SESSION yg di kirim dari CONTROLLER (maker_id)
         var maker_id = '<?= $maker_id ?>';
         url          = '<?= $this->Url->build(['action' => 'notificationLetters'])?>';
+        console.log(maker_id);
+        
         if(maker_id){
             window.open(url + '/' + maker_id);
         }
+    });
         <?php
             $editUrl      = $this->Url->build(['action'=>'edit'])."/";
             if($this->Acl->check(['action'=>'edit']) == false){

@@ -17,10 +17,6 @@
         $('[data-toggle="tooltip"]').tooltip()
     })
         <?php
-            $deleteUrl    = $this->Url->build(['action'=>'delete'])."/";
-            if($this->Acl->check(['action'=>'delete']) == false){
-                $deleteUrl = "";
-            }
             $editUrl      = $this->Url->build(['action'=>'edit'])."/";
             if($this->Acl->check(['action'=>'edit']) == false){
                 $editUrl = "";
@@ -31,7 +27,6 @@
             }
         ?>
         jQuery(document).ready(function() {
-            var deleteUrl = "<?=$deleteUrl;?>";
             var editUrl = "<?=$editUrl;?>";
             var viewUrl = "<?=$viewUrl;?>";
             var no = 0;

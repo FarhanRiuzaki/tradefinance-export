@@ -221,10 +221,6 @@ class AmendmentApproverController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $record = $this->{$this->primaryModel}->get($id,['contain'=>'UserGroups','UserGroups.Aros']);
         if ($this->{$this->primaryModel}->delete($record)) {
-            $this->Redis->destroyCacheUserAuth($record);
-            $this->Redis->deleteAllCacheAcos($record);
-            $this->Redis->destroyCacheUrlHome($record);
-            $this->Redis->destroyCacheSideNav($record);
             $code = 200;
             $message = __($this->Utilities->message_alert($this->titleModule,5));
             $status = 'success';

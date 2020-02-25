@@ -1,17 +1,17 @@
 
 <?=$this->element('widget/datatable');?>
 <?php $this->start('script');?>
+<?php
+    $editUrl      = $this->Url->build(['action'=>'edit'])."/";
+    if($this->Acl->check(['action'=>'edit']) == false){
+        $editUrl = "";
+    }
+    $viewUrl = $this->Url->build(['action'=>'view'])."/";
+    if($this->Acl->check(['action'=>'view']) == false){
+        $viewUrl = "";
+    }
+?>
     <script>
-        <?php
-            $editUrl      = $this->Url->build(['action'=>'edit'])."/";
-            if($this->Acl->check(['action'=>'edit']) == false){
-                $editUrl = "";
-            }
-            $viewUrl = $this->Url->build(['action'=>'view'])."/";
-            if($this->Acl->check(['action'=>'view']) == false){
-                $viewUrl = "";
-            }
-        ?>
         jQuery(document).ready(function() {
             var editUrl = "<?=$editUrl;?>";
             var viewUrl = "<?=$viewUrl;?>";
